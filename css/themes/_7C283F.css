@@ -1,0 +1,39 @@
+a,
+a:hover,
+a:focus,
+a:active, 
+a.active:hover
+{
+	color: #7C283F;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	color: #7C283F;
+}
+.block h2
+{
+	color: #7C283F;
+}
+.front h2
+{
+	color: #7C283F;
+}
+.logo-text a
+{
+	color: #7C283F;
+}
+#header-region
+{
+	background: #7C283F;
+}
+.item-list .pager a:hover,
+.item-list .pager a:active,
+.item-list .pager a:focus
+{
+	color: #7C283F;
+}

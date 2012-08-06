@@ -1,0 +1,39 @@
+a,
+a:hover,
+a:focus,
+a:active, 
+a.active:hover
+{
+	color: #F16450;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	color: #F16450;
+}
+.block h2
+{
+	color: #F16450;
+}
+.front h2
+{
+	color: #F16450;
+}
+.logo-text a
+{
+	color: #F16450;
+}
+#header-region
+{
+	background: #F16450;
+}
+.item-list .pager a:hover,
+.item-list .pager a:active,
+.item-list .pager a:focus
+{
+	color: #F16450;
+}

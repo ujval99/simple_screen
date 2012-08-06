@@ -1,0 +1,39 @@
+a,
+a:hover,
+a:focus,
+a:active, 
+a.active:hover
+{
+	color: #885B24;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	color: #885B24;
+}
+.block h2
+{
+	color: #885B24;
+}
+.front h2
+{
+	color: #885B24;
+}
+.logo-text a
+{
+	color: #885B24;
+}
+#header-region
+{
+	background: #885B24;
+}
+.item-list .pager a:hover,
+.item-list .pager a:active,
+.item-list .pager a:focus
+{
+	color: #885B24;
+}

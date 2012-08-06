@@ -1,0 +1,20 @@
+name = simple screen
+description = "Fixed width(960px), 2 columns by drupal
+core = 6.x
+engine = phptemplate
+
+regions[menu] = Main Menu
+regions[logo] = Logo OR Site Name
+regions[button] = Social Links
+regions[slogan] = Short Line
+regions[right] = Right sidebar
+regions[site_snipet] = Site Snipet Content
+regions[content] = Content
+regions[footer] = Footer
+
+; Information added by ujval99 packaging script on 2012-08-01
+version = "6.x-1"
+core = "6.x"
+project = "simple_screen"
+datestamp = "1307534874"
+
