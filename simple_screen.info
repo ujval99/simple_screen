@@ -1,20 +1,45 @@
-name = simple screen
-description = "Fixed width(960px), 2 columns by drupal
+name = simple_screen
+description = Fixed width(960px), 2 columns by Ujval Shah
+
 core = 6.x
 engine = phptemplate
 
-regions[menu] = Main Menu
-regions[logo] = Logo OR Site Name
-regions[button] = Social Links
-regions[slogan] = Short Line
-regions[right] = Right sidebar
-regions[site_snipet] = Site Snipet Content
+regions[menu] = Top Navigation
 regions[content] = Content
+regions[right] = Right sidebar
 regions[footer] = Footer
 
-; Information added by ujval99 packaging script on 2012-08-01
+scripts[] = js/simple_screen.js
+
+; Default theme settings
+settings[simple_screen_testimonials_show] = 1
+settings[simple_screen_promo_show] = 1
+settings[simple_screen_promo_1_title] = 'Web India'
+settings[simple_screen_promo_1] = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+settings[simple_screen_promo_2_title] = 'Mobile'
+settings[simple_screen_promo_2] = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+settings[simple_screen_promo_3_title] = 'Cloud'
+settings[simple_screen_promo_3] = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+settings[simple_screen_testimonials_title] = 'testimonials'
+settings[simple_screen_testimonials_1] = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+settings[simple_screen_testimonials_2] = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+settings[simple_screen_testimonials_3] = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+settings[simple_screen_contact_title] = 'contact us'
+settings[simple_screen_contact_col_0] = '<img src="sites/all/themes/simple_screen/img/map.png">'
+settings[simple_screen_contact_col_1] = 'Name Of the Location,<br/>Street Name, City<br/>State, Country<br/>Freephone: +0 000 000 0000<br/>Telephone:+0 000 000 0000<br/>FAX:+0 000 000 0000<br/>E-mail: mail@demolink.org<br/>Skype: <a class="color" href="#">@skypename</a>'
+settings[simple_screen_quick_show] = 1
+settings[simple_screen_quick_fb] = 'http://facebook.com/'
+settings[simple_screen_quick_tw] = 'http://twitter.com/'
+settings[simple_screen_quick_gp] = 'http://google.com/'
+settings[simple_screen_quick_feed] = 'http://google.com/'
+settings[toggle_slogan] = 1
+settings[site_slogan] = 'Site Slogan'
+settings[simple_screen_style] = '_000000'
+settings[simple_screen_copyright_show] = 1
+settings[simple_screen_copyright_text] = '<p>Opensource <span>&copy; 2012</span></p>'
+
+; Information added by Ujval Shah packaging script on 2012-08-01
 version = "6.x-1"
 core = "6.x"
 project = "simple_screen"
 datestamp = "1307534874"
-

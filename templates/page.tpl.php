@@ -1,7 +1,8 @@
 <?php
 
 /**
- * @file page.tpl.php
+ * @file
+ * page.tpl.php
  *
  * Theme implementation to display a single Drupal page.
  *
@@ -82,27 +83,24 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
-  <?php print $scripts; ?>  
-  <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?> </script>
-
-  <!--[if lt IE 7]>
-  <style type="text/css" media="all">@import "<?php print base_path() . path_to_theme(); ?>/fix-ie.css";</style>
-  <![endif]-->
-  
-
+  <?php print $scripts; ?>
 </head>
 <body class="<?php print $body_classes; ?>">
   <div id="page">
-		<div class="header"> <!-- header -->
+    <div class="header"> <!-- header -->
       <div class="wrapper"> <!-- wrapper -->
         <div class="article"> <!-- article -->
-		  
-		  <?php if (!empty($menu)): ?> <!-- menu -->
-			<div id="header-region">
-			  <?php print $menu; ?>
-			</div>
-		  <?php endif; ?> <!-- /menu -->
-		  
+
+          <?php if (!empty($menu) || isset($primary_links) ): ?> <!-- menu -->
+          <div id="header-region">
+            <?php if (isset($primary_links)) : ?>
+            <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
+            <?php else :?>
+            <?php print $menu; ?>
+            <?php endif; ?> <!-- /menu -->
+          </div>
+          <?php endif; ?> <!-- /menu -->
+
           <?php if (!empty($logo)): ?> <!-- logo -->
             <h2>
               <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
@@ -110,58 +108,34 @@
               </a>
             </h2>
           <?php endif; ?> <!-- /logo -->
-            
-		  <?php if (!empty($site_name)): ?> <!-- site_name -->
-			<div class="line logo-text">
-				<span class="margRight"></span>
-					<h2><a href="<?php print $front_page ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></h2>
-				<span class="margLeft"></span>
-			</div>
-		  <?php endif; ?> <!-- site_name -->
-		   
-          <div class="clear"></div>
-          <?php if((theme_get_setting('simple_screen_quick_show'))==1){ simple_screen_social_links_block(); } ?> <!-- /simple_screen_quick_show -->
-               
 
-		  <?php if (!empty($site_slogan)): ?> <!-- site_slogan -->
-		  <div class="likeHolder">
-			<p><?php print $site_slogan; ?></p> <!-- site_slogan -->
-		  </div>
-		  <?php endif; ?>
+          <?php if (!empty($site_name)): ?> <!-- site_name -->
+          <div class="line logo-text">
+            <span class="margRight"></span>
+              <h2><a href="<?php print $front_page ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></h2>
+            <span class="margLeft"></span>
+          </div>
+          <?php endif; ?> <!-- site_name -->
+
+          <div class="clear"></div>
+          <?php if ((theme_get_setting('simple_screen_quick_show')) == 1) : ?>
+            <?php simple_screen_social_links_block(); ?>
+          <?php endif; ?>
+
+          <?php if (!empty($site_slogan)): ?> <!-- site_slogan -->
+          <div class="site_slogan">
+          <p><?php print $site_slogan; ?></p> <!-- site_slogan -->
+          </div>
+          <?php endif; ?>
+
         </div> <!-- /article -->
       </div> <!-- /wrapper -->
     </div> <!-- /header -->
-    
-    <!-- <div id="navigation" class="menu <?php if (!empty($primary_links)) { print "withprimary"; } if (!empty($secondary_links)) { print " withsecondary"; } ?> "> -->
-      <?php if (!empty($secondary_links)): ?>
-        <div id="secondary" class="clear-block">
-          <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
-        </div>
-      <?php endif; ?>
-    <!-- </div> --><!-- /navigation -->
 
     <div id="container" class="clear-block">
-		<?php if ($is_front): ?>
-	    <?php if (!empty($promot_front_content)): ?>
-	    <section class="container margBot2" id="info">
-          <div class="promo-content">
-            <?php print $promot_front_content; ?>
-          </div> <!-- /above-content -->
-        </section>
-        <?php endif; ?>
-        <?php endif; ?>
-      <?php if (!empty($left)): ?>
-        <div id="sidebar-left" class="column sidebar">
-          <?php print $left; ?>
-        </div> <!-- /sidebar-left -->
-      <?php endif; ?>
-
       <div id="main" class="column"><div id="main-squeeze">
         <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
         <?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
-
-
-
         <div id="content">
           <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
           <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
@@ -172,7 +146,6 @@
           </div> <!-- /content-content -->
           <?php print $feed_icons; ?>
         </div> <!-- /content -->
-
       </div></div> <!-- /main-squeeze /main -->
 
       <?php if (!empty($right)): ?>
@@ -180,19 +153,20 @@
           <?php print $right; ?>
         </div> <!-- /sidebar-right -->
       <?php endif; ?>
-
     </div> <!-- /container -->
 
     <div id="footer-wrapper">
       <div id="footer">
-        <?php print $footer_message; ?>
-        <?php if (!empty($footer)): print $footer; endif; ?>
+		  <?php if (theme_get_setting('simple_screen_copyright_show')) : ?>
+			<?php print theme_get_setting('simple_screen_copyright_text'); ?>
+		  <?php else :?>
+			<?php print $footer_message; ?>
+			<?php if (!empty($footer)): print $footer; endif; ?>  
+		  <?php endif; ?>
       </div> <!-- /footer -->
     </div> <!-- /footer-wrapper -->
 
     <?php print $closure; ?>
-
   </div> <!-- /page -->
-
 </body>
 </html>

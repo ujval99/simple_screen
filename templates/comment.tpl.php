@@ -1,4 +1,10 @@
-<div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ($comment->status == COMMENT_NOT_PUBLISHED) ? ' comment-unpublished' : ''; print ' '. $zebra; ?>">
+<?php
+/**
+ * @file
+ * comment.tpl.php
+ */
+?>
+<div class="comment<?php print($comment->new) ? ' comment-new' : ''; print($comment->status == COMMENT_NOT_PUBLISHED) ? ' comment-unpublished' : ''; print ' '. $zebra; ?>">
 
   <div class="clear-block">
 
@@ -14,7 +20,7 @@
     <?php if ($submitted): ?>
       <span class="submitted"><?php print t('!date — !username', array('!username' => theme('username', $comment), '!date' => format_date($comment->timestamp))); ?></span>
     <?php endif; ?>
-      
+
     <div class="content">
       <?php print $content ?>
     </div>

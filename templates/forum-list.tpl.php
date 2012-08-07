@@ -1,7 +1,8 @@
 <?php
 
 /**
- * @file forum-list.tpl.php
+ * @file
+ * forum-list.tpl.php
  * Default theme implementation to display a list of forums and containers.
  *
  * Available variables:
@@ -41,7 +42,7 @@
   </thead>
   <tbody>
   <?php foreach ($forums as $child_id => $forum): ?>
-    <tr id="forum-list-<?php print $child_id; ?>" class="<?php print $forum->zebra; print ' depth-'.$forum->depth; ?>">
+    <tr id="forum-list-<?php print $child_id; ?>" class="<?php print $forum->zebra; print ' depth-' . $forum->depth; ?>">
       <td <?php print $forum->is_container ? 'colspan="4" class="container"' : 'class="forum"'; ?>>
         <?php /* Enclose the contents of this cell with X divs, where X is the
                * depth this forum resides at. This will allow us to use CSS

@@ -1,3 +1,9 @@
+<?php
+/**
+ * @file
+ * node.tpl.php
+ */
+?>
 <div id="node-<?php print $node->nid; ?>" class="node<?php if ($sticky) { print ' sticky'; } ?><?php if (!$status) { print ' node-unpublished'; } ?><?php if ($page == 0) { print ' teaser'; } ?>">
 
 <?php print $picture ?>

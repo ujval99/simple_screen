@@ -388,7 +388,6 @@ p
 div.messages
 {
 	background-color: #333333;
-	border: 3px solid #999999;
 	border-radius: 5px;
 	color: #FFFFFF;
 	font-size: 12px;
@@ -933,39 +932,12 @@ div.comment .links li
 	font-weight: bold;
 }
 
-
-#font span,
-#farben span
-{
-	color: #333333;
-	display: block;
-	float: left;
-	font-family: arial;
-	font-size: 10px;
-	text-decoration: none;
-}
-#farben a
-{
-	display: block;
-	float: left;
-	height: 10px;
-	margin-left: 5px;
-	width: 10px;
-}
-#font a
-{
-	color: #cccccc;
-	display: block;
-	float: left;
-	font-family: arial;
-	font-size: 10px;
-	margin-left: 5px;
-	text-decoration: none;
-}
 .header .article
 {
 	text-align: center;
 }
+
+/* START - Header; LOGO,Follow Icons,Slogan Style */
 #header-region
 {
 	background: none repeat scroll 0 0 #111111;
@@ -975,11 +947,16 @@ div.comment .links li
 	padding-top: 15px;
 	text-transform: uppercase;
 	width: 960px;
+	border-radius:0px 0px 5px 5px;
 }
 #header-region .block
 {
 	background: none;
 	margin-bottom: 0px;
+}
+#header-region .block h2
+{
+	display:none;
 }
 #header-region .block .content
 {
@@ -1041,7 +1018,7 @@ div.comment .links li
 	margin-top: 34px;
 	width: 100px;
 }
-.likeHolder
+.site_slogan
 {
 	background: url("img/part_like.png") no-repeat;
 	height: 37px;
@@ -1049,7 +1026,7 @@ div.comment .links li
 	padding-top: 7px;
 	width: 345px;
 }
-.likeHolder p
+.site_slogan p
 {
 	color: #eeeeee;
 	display: inline-block;
@@ -1059,12 +1036,6 @@ div.comment .links li
 	position: relative;
 	text-transform: uppercase;
 	top: 1px;
-}
-.like-line
-{
-	margin-right: 4px;
-	position: relative;
-	top: -2px;
 }
 .margRight
 {
@@ -1098,6 +1069,9 @@ div.comment .links li
 {
 	color: #111111;
 }
+/* END - Header; LOGO,Follow Icons,Slogan Style */
+
+/* START - Front Page Style */
 .front .logo-text h2
 {
 	color: #0b0f1b;
@@ -1108,7 +1082,15 @@ div.comment .links li
 	text-shadow: 1px 1px 2px #c4c4c4;
 	text-transform: uppercase;
 }
-
+.front h2
+{
+	color: #20211E;
+	font: bold 36px 'Ubuntu',sans-serif;
+	letter-spacing: -1px;
+	margin-bottom: 20px;
+	text-shadow: 1px 1px 2px #C4C4C4;
+	text-transform: uppercase;
+}
 .logo-text h2
 {
 	color: #0b0f1b;
@@ -1119,22 +1101,16 @@ div.comment .links li
 	text-shadow: 1px 1px 2px #c4c4c4;
 	text-transform: uppercase;
 }
+/* END - Front Page Style */
 
+/* START - Promotional Content Blocks For Front Page */
 .promo-content
 {
 	margin-top: 40px;
 	overflow: hidden;
 	width: 100%;
 }
-.front h2
-{
-	color: #20211E;
-	font: bold 36px 'Ubuntu',sans-serif;
-	letter-spacing: -1px;
-	margin-bottom: 20px;
-	text-shadow: 1px 1px 2px #C4C4C4;
-	text-transform: uppercase;
-}
+
 .promo-content .block
 {
 	background: url('img/icon.png') no-repeat center 0;
@@ -1144,6 +1120,16 @@ div.comment .links li
 	padding-top: 40px;
 	text-align: center;
 	width: 290px;
+}
+/* END - Promotional Content Blocks For Front Page */
+
+/* START - contacts Style */
+#contacts
+{
+	float: left;
+	height: 400px;
+	margin: 40px 0 0 0;
+	width: 100%;
 }
 #contacts h2
 {
@@ -1177,30 +1163,41 @@ div.comment .links li
 	height: 261px;
 	margin: 0;
 	width: 470px;
+	text-align:center;
 }
-#contacts
-{
-	float: left;
-	height: 400px;
-	margin: 40px 0 0 0;
-	width: 100%;
-}
-#footer-wrapper
-{
-	clear: both;
-}
-#site_snipet
+/* END - contacts Style */
+
+
+
+/* START - testimonials Style */
+#testimonials
 {
 	float: left;
 	margin: 40px 0;
 	width: 100%;
 	height:120px;
 }
-#site_snipet h2
+#testimonials h2
 {
 	background: url('img/testimonial.png') no-repeat left 0;
 	padding-left: 50px;
 }
+#quotes {
+	margin: 0;
+	position: relative;
+}
+.textItem {
+	position: absolute;
+	display: none;
+}
+/* END - testimonials Style */
 
+
+/* START - footer Style */
+#footer-wrapper
+{
+	clear: both;
+}
 #footer p {font:24px 'Ubuntu',sans-serif; color:#181818; font-weight:bold; font-style:italic; text-shadow:1px 1px 2px #c4c4c4; margin:0px; padding:0px;}
 #footer span {font:12px 'Arial',sans-serif; color:#232121; top:0px; position:relative; text-shadow:none;}
+/* END - footer Style */

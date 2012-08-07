@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @file page.tpl.php
- *
+ * @file
+ * page-front.tpl.php
  * Theme implementation to display a single Drupal page.
  *
  * Available variables:
@@ -82,115 +82,86 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
-  <?php print $scripts; ?>  
-  <style type="text/css">
-#quotes {
-	margin: 0;
-	position: relative;
-}
-.textItem {
-	position: absolute;
-	display: none;
-}
-</style>
-
-
-
+  <?php print $scripts; ?>
   <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		setupRotator();
-	});
-	function setupRotator() {
-		if ($('.textItem').length > 1) {
-			$('.textItem:first').addClass('current').fadeIn(2000);
-			setInterval('textRotate()', 6000);
-		}
-	}
-	function textRotate() {
-		var current = $('#quotes > .current');
-		if (current.next().length == 0) {
-			current.removeClass('current').fadeOut(2000);
-			$('.textItem:first').addClass('current').fadeIn(2000);
-		} else {
-			current.removeClass('current').fadeOut(2000);
-			current.next().addClass('current').fadeIn(2000);
-		}
-	}
-</script>
 </head>
 <body class="<?php print $body_classes; ?>">
   <div id="page">
-	<div class="header"> <!-- header -->
-      <div class="wrapper"> <!-- wrapper -->
-        <div class="article"> <!-- article -->
-		  
-		  <?php if (!empty($menu)): ?> <!-- menu -->
-			<div id="header-region">
-			  <?php print $menu; ?>
-			</div>
-		  <?php endif; ?> <!-- /menu -->
-		  
-          <?php if (!empty($logo)): ?> <!-- logo -->
-            <h2>
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-                <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-              </a>
-            </h2>
-          <?php endif; ?> <!-- /logo -->
-            
-		  <?php if (!empty($site_name)): ?> <!-- site_name -->
-			<div class="line logo-text">
-				<span class="margRight"></span>
-					<h2><a href="<?php print $front_page ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></h2>
-				<span class="margLeft"></span>
-			</div>
-		  <?php endif; ?> <!-- site_name -->
-		   
-          <div class="clear"></div>
-          <?php if((theme_get_setting('simple_screen_quick_show'))==1){ simple_screen_social_links_block(); } ?> <!-- /simple_screen_quick_show -->
-               
+  <div class="header"> <!-- header -->
+    <div class="wrapper"> <!-- wrapper -->
+      <div class="article"> <!-- article -->
+        <?php if (!empty($menu) || isset($primary_links) ): ?> <!-- menu -->
+        <div id="header-region">
+          <?php if (isset($primary_links)) : ?>
+          <?php print theme('links', $primary_links, array('class' => 'links primary-links')) ?>
+          <?php else :?>
+          <?php print $menu; ?>           
+          <?php endif; ?> <!-- /menu -->
+        </div>
+        <?php endif; ?> <!-- /menu -->
+        <?php if (!empty($logo)): ?> <!-- logo -->
+          <h2>
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+            </a>
+          </h2>
+        <?php endif; ?> <!-- /logo -->
+        <?php if (!empty($site_name)): ?> <!-- site_name -->
+        <div class="line logo-text">
+          <span class="margRight"></span>
+            <h2><a href="<?php print $front_page ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></h2>
+          <span class="margLeft"></span>
+        </div>
+        <?php endif; ?> <!-- site_name -->
+        <div class="clear"></div>
+        <?php if ((theme_get_setting('simple_screen_quick_show')) == 1) : ?>
+          <?php simple_screen_social_links_block(); ?>
+        <?php endif; ?>
+        <?php if (!empty($site_slogan)): ?> <!-- site_slogan -->
+          <div class="site_slogan">
+          <p><?php print $site_slogan; ?></p> <!-- site_slogan -->
+          </div>
+        <?php endif; ?>
+      </div> <!-- /article -->
+    </div> <!-- /wrapper -->
+  </div> <!-- /header -->
 
-		  <?php if (!empty($site_slogan)): ?> <!-- site_slogan -->
-		  <div class="likeHolder">
-			<p><?php print $site_slogan; ?></p> <!-- site_slogan -->
-		  </div>
-		  <?php endif; ?>
-        </div> <!-- /article -->
-      </div> <!-- /wrapper -->
-    </div> <!-- /header -->
-    
+
+  <?php if ((theme_get_setting('simple_screen_promo_show')) == 1) : ?>
     <div id="container" class="clear-block"> <!-- container -->
-	   <?php if((theme_get_setting('simple_screen_promo_show'))==1){ simple_screen_promotional_text_block(); } ?> <!-- /simple_screen_quick_show -->
+    <?php  simple_screen_promotional_text_block(); ?>
     </div> <!-- /container -->
+   <?php endif;?>
 
-    
-  <?php if((theme_get_setting('simple_screen_testimonials_show'))==1){ ?>
-	 <div id="site_snipet" class="clear-block"> <!-- site_snipet -->
-	 <?php simple_screen_testimonial_text_block(); ?>
-	 </div> <!-- /site_snipet -->
-  <?php } ?> <!-- /simple_screen_quick_show -->
-        
-    <div id="contacts">
-      <h2><?php print theme_get_setting('simple_screen_contact_title'); ?></h2>
-      <div id="contact_col_0"><figure class="google_map" style="overflow: hidden;">
-      <?php print theme_get_setting('simple_screen_contact_col_0'); ?></figure>
-      </div> <!-- /above-content -->
-      <div id="contact_col_1">
-      <?php print theme_get_setting('simple_screen_contact_col_1'); ?>
-      </div> <!-- /above-content -->
-    </div>
-        
-    <div id="footer-wrapper">
-      <div id="footer">
+  <?php if ((theme_get_setting('simple_screen_testimonials_show')) == 1) : ?>
+   <div id="testimonials" class="clear-block"> <!-- site_snipet -->
+   <?php simple_screen_testimonial_text_block(); ?>
+   </div> <!-- /testimonials -->
+  <?php endif; ?>
+
+  <div id="contacts">
+    <h2><?php print theme_get_setting('simple_screen_contact_title'); ?></h2>
+    <div id="contact_col_0"><figure class="google_map" style="overflow: hidden;">
+    <?php print theme_get_setting('simple_screen_contact_col_0'); ?></figure>
+    </div> <!-- /contact_col_0 -->
+    <div id="contact_col_1">
+    <?php print theme_get_setting('simple_screen_contact_col_1'); ?>
+    </div> <!-- /contact_col_1 -->
+  </div>
+
+  <div id="footer-wrapper">
+    <div id="footer">
+	  <?php if (theme_get_setting('simple_screen_copyright_show')) : ?>
+        <?php print theme_get_setting('simple_screen_copyright_text'); ?>
+      <?php else :?>
         <?php print $footer_message; ?>
-        <?php if (!empty($footer)): print $footer; endif; ?>
-      </div> <!-- /footer -->
-    </div> <!-- /footer-wrapper -->
+        <?php if (!empty($footer)): print $footer; endif; ?>  
+      <?php endif; ?>
+    </div> <!-- /footer -->
+  </div> <!-- /footer-wrapper -->
 
-    <?php print $closure; ?>
+  <?php print $closure; ?>
 
   </div> <!-- /page -->
-
 </body>
 </html>

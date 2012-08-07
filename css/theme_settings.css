@@ -1,0 +1,143 @@
+/**
+ * Styling admin theme settings
+ */
+div.simple_screen-settings .form-radios .form-item *
+{
+    margin: 0 auto;
+    font: italic 13px/15px Arial,sans-serif;
+    ;
+}
+
+div.simple_screen-settings .form-radios .form-item
+{
+    display: block;
+    float: left;
+    width: 120px;
+    height: 90px;
+    text-align: center;
+}
+
+#community-style .form-radios label
+{
+}
+
+#community-style .form-radios input
+{
+}
+
+div.simple_screen-settings .form-radios div.form-item:hover,
+div.simple_screen-settings .form-radios .fieldset div.form-item:hover
+{
+    background-color: transparent;
+}
+
+div.simple_screen-settings .form-radios span.icon.default_item span
+{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+div.simple_screen-settings .form-radios span.icon.default_item span
+{
+    background-image: url("../img/list/green_checklist.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+div.simple_screen-settings .form-radios span.icon._669933
+{
+    background-color: #669933
+}
+
+div.simple_screen-settings .form-radios span.icon._64A0AA
+{
+    background-color: #64A0AA
+}
+
+div.simple_screen-settings .form-radios span.icon._7C283F
+{
+    background-color: #7C283F
+}
+
+div.simple_screen-settings .form-radios span.icon._4C5E91
+{
+    background-color: #4C5E91
+}
+
+div.simple_screen-settings .form-radios span.icon._885B24
+{
+    background-color: #885B24
+}
+
+div.simple_screen-settings .form-radios span.icon._E572A6
+{
+    background-color: #E572A6
+}
+
+div.simple_screen-settings .form-radios span.icon._F16450
+{
+    background-color: #F16450
+}
+
+div.simple_screen-settings .form-radios span.icon._BCA474
+{
+    background-color: #BCA474
+}
+
+div.simple_screen-settings .form-radios span.icon._556270
+{
+    background-color: #556270
+}
+
+div.simple_screen-settings .form-radios span.icon._77AC92
+{
+    background-color: #77AC92
+}
+
+div.simple_screen-settings .form-radios span.icon._8A3586
+{
+    background-color: #8A3586
+}
+
+div.simple_screen-settings .form-radios span.icon._01B8F1
+{
+    background-color: #01B8F1
+}
+
+
+div.simple_screen-settings .form-radios span.icon._000000
+{
+    background-color: #000000
+}
+
+div.simple_screen-settings .form-radios span.icon
+{
+    display: block;
+    width: 42px;
+    height: 42px;
+    background: #F8F8F8;
+    border: 4px solid #e4e1e1;
+    border-radius: 5px;
+}
+
+div.simple_screen-settings .form-radios span.name
+{
+    display: block;
+    padding: .3em 0 0;
+}
+
+div.simple_screen-settings .form-radios label.option.hovered
+{
+    cursor: pointer;
+}
+
+div.simple_screen-settings .form-radios label.option.hovered span.name
+{
+    color: #333
+}
+
+div.simple_screen-settings .form-radios label.option.hovered span.icon
+{
+    border-color: #999
+}

@@ -1,0 +1,39 @@
+a,
+a:hover,
+a:focus,
+a:active, 
+a.active:hover
+{
+	color: #20211E;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	color: #20211E;
+}
+.block h2
+{
+	color: #20211E;
+}
+.front h2
+{
+	color: #20211E;
+}
+.logo-text a
+{
+	color: #20211E;
+}
+#header-region
+{
+	background: #20211E;
+}
+.item-list .pager a:hover,
+.item-list .pager a:active,
+.item-list .pager a:focus
+{
+	color: #20211E;
+}
